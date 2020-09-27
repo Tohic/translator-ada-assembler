@@ -1,0 +1,45 @@
+procedure main is
+   a b c:float;
+   d x1 x2:float;
+
+begin
+   Put("Vvedite a ");
+   Get(a);
+   Put("Vvedite b ");
+   Get(b);
+   Put("Vvedite c ");
+   Get(c);
+
+   d:=b*b-4.0*a*c;
+
+   if d > 0.0 then
+      d:=sqrt(d);
+      x1:=(-b+d)/(2.0*a);
+      x2:=(-b-d)/(2.0*a);
+      Put("x1 = ");
+      Put(x1);
+      New_Line;
+      Put("x2 = ");
+      Put(x2);
+   elsif d = 0.0 
+	then
+         d:=sqrt(d);
+         x1:=-b/(2.0*a);
+         Put("x = ");
+         Put(x1);
+      else
+         d:= abs(d);
+         d:=sqrt(d);
+         x1:=-b/(2.0*a);
+         x2:=d/(2.0*a);
+         Put("x1 = ");
+         Put(x1);
+         Put(" + i*");
+         Put(x2);
+         New_Line;
+         Put("x2 = ");
+         Put(x1);
+         Put(" - i*");
+         Put(x2);
+      end if;
+end main;

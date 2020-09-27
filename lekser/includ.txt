@@ -1,0 +1,8 @@
+.386
+    .model flat,stdcall
+    include\masm32\include\masm32rt.inc
+    include\masm32\include\msvcrt.inc
+    include\masm32\include\kernel32.inc
+    includelib \libmasm32.lib
+    includelib \libmsvcrt.lib
+    includelib \libkernel32.lib 

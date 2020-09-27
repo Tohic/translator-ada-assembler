@@ -1,0 +1,12 @@
+.data 
+
+c DD 0
+
+b DD 0
+
+a DD 0
+Number0 DD 5.0
+Number1 DD 0.0
+Number2 DD 1.0
+Number3 DD 5.0
+Number4 DD 0.0

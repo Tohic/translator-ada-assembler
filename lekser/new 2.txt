@@ -1,0 +1,50 @@
+with Ada.Text_IO;
+with Ada.Float_Text_IO;
+with Ada.Numerics.Generic_Elementary_Functions;
+
+procedure main is
+   package FL_Math is new Ada.Numerics.Generic_Elementary_Functions (float);
+    use FL_Math;
+   a,b,c:float;
+   d,x1,x2:float;
+
+begin
+   Ada.Text_IO.Put("Vvedite a ");
+   Ada.Float_Text_IO.Get(a);
+   Ada.Text_IO.Put("Vvedite b ");
+   Ada.Float_Text_IO.Get(b);
+   Ada.Text_IO.Put("Vvedite c ");
+   Ada.Float_Text_IO.Get(c);
+
+   d:=b*b-4.0*a*c;
+
+   if d > 0.0 then
+      d:=sqrt(d);
+      x1:=(-b+d)/(2.0*a);
+      x2:=(-b-d)/(2.0*a);
+      Ada.Text_IO.Put("x1 = ");
+      Ada.Float_Text_IO.Put(x1);
+      Ada.Text_IO.New_Line;
+      Ada.Text_IO.Put("x2 = ");
+      Ada.Float_Text_IO.Put(x2);
+   elsif d = 0.0 then
+         d:=sqrt(d);
+         x1:=-b/(2.0*a);
+         Ada.Text_IO.Put("x = ");
+         Ada.Float_Text_IO.Put(x1);
+      else
+         d:= abs(d);
+         d:=sqrt(d);
+         x1:=-b/(2.0*a);
+         x2:=d/(2.0*a);
+         Ada.Text_IO.Put("x1 = ");
+         Ada.Float_Text_IO.Put(x1);
+         Ada.Text_IO.Put(" + i*");
+         Ada.Float_Text_IO.Put(x2);
+         Ada.Text_IO.New_Line;
+         Ada.Text_IO.Put("x2 = ");
+         Ada.Float_Text_IO.Put(x1);
+         Ada.Text_IO.Put(" - i*");
+         Ada.Float_Text_IO.Put(x2);
+      end if;
+end main;

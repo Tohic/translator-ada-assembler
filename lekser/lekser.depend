@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558376522 source:c:\users\asus\documents\progs\4sem\spo\lekser\lekser\main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+

@@ -1,0 +1,14 @@
+procedure main () is
+--procedure fn(akt:integer;) is begin akt:=1+5; end;
+a:Integer;
+b:Integer;
+c:Integer;
+begin
+a:=0;
+if (a>1) then
+a:=-(1+5);
+a:=5
+end
+
+
+

@@ -1,0 +1,49 @@
+with Ada.Text_IO;
+with Ada.Integer_Text_IO;
+
+procedure Main is
+   type vector is array (1 .. 10) of Integer;
+   procedure binary_sorting(a: in out vector; b:in Integer; n: in Integer) is
+   left:Integer:=b;
+   right:Integer:=n;
+   opor:Integer:=a((b+n)/2);
+   temp:Integer:=0;
+begin
+   while left<=right
+   loop
+      while a(left)<opor
+      loop
+         left:=left+1;
+      end loop;
+      while a(right)>opor
+      loop
+         right:= right-1;
+      end loop;
+      if left<=right then
+         temp:=a(left);
+         a(left):=a(right);
+         a(right):=temp;
+         left:=left+1;
+         right:=right-1;
+         end if;
+         if b<right then
+            binary_sorting(a,b,right);
+         end if;
+         if n>left then
+            binary_sorting(a,left,n);
+         end if;
+     end loop;
+   end binary_sorting;
+   i,k:Integer:=0;
+   a:vector;
+begin
+   for i in 1..10 loop
+      Ada.Integer_Text_IO.Get(k);
+      a(i):=k;
+   end loop;
+   binary_sorting(a,1,10);
+   for i in 1..10 loop
+      Ada.Integer_Text_IO.Put(a(i));
+   end loop;
+   null;
+end Main;

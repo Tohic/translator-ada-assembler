@@ -1,0 +1,41 @@
+.code 
+main Proc
+FINIT
+push Number0
+pop ebx
+mov a,ebx
+push a
+fld dword ptr[esp]
+call writefloat
+mov eax,a 
+mov ebx,1
+.IF eax>ebx 
+push Number1
+push Number2
+push Number3
+fld dword ptr[esp]
+pop eax
+    fadd dword ptr[esp]
+    pop eax
+    fstp dword ptr [esp]
+fld dword ptr[esp]
+pop eax
+    fsub dword ptr[esp]
+    pop eax
+    fstp dword ptr [esp]
+pop ebx
+mov a,ebx
+push a
+fld dword ptr[esp]
+call writefloat
+.ENDIF 
+push Number4
+pop ebx
+mov a,ebx
+push a
+fld dword ptr[esp]
+call writefloat
+invoke crt__getch
+invoke ExitProcess,0 
+main endp
+END main
